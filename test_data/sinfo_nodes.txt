@@ -1,0 +1,5 @@
+1,drained*
+123,idle
+3,drained
+6,mixed
+59,allocated

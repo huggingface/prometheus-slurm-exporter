@@ -22,22 +22,21 @@ import (
 	"testing"
 )
 
-func TestNodesMetrics(t *testing.T) {
+func TestNodesPerPartitionMetrics(t *testing.T) {
 	// Read the input data from a file
-	file, err := os.Open("test_data/sinfo_nodes.txt")
+	file, err := os.Open("test_data/sinfo_nodes_per_partition.txt")
 	if err != nil {
 		t.Fatalf("Can not open test data: %v", err)
 	}
 	data, err := ioutil.ReadAll(file)
-	metrics := ParseNodesMetrics(data)
+	metrics := ParseNodesPerPartitionMetrics(data)
 	t.Logf("%+v", metrics)
-	assert.Equal(t, float64(59), metrics.alloc)
-	assert.Equal(t, float64(4), metrics.drain)
-	assert.Equal(t, float64(123), metrics.idle)
-	assert.Equal(t, float64(59), metrics.alloc)
-	assert.Equal(t, float64(6), metrics.mix)
+	assert.Equal(t, float64(59), metrics.alloc["partition-2"])
+	assert.Equal(t, float64(1), metrics.drain["partition-1"])
+	assert.Equal(t, float64(28), metrics.idle["partition-2"])
+	assert.Equal(t, float64(123), metrics.idle["partition-1"])
 }
 
-func TestNodesGetMetrics(t *testing.T) {
+func TestNodesPerPartitionGetMetrics(t *testing.T) {
 	t.Logf("%+v", NodesGetMetrics())
 }
