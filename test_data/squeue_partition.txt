@@ -1,0 +1,26 @@
+partition-1,1,DependencyNeverSatisfied
+partition-1,1,DependencyNeverSatisfied
+partition-2,96,BeginTime
+partition-2,10,BeginTime
+partition-2,10,BeginTime
+partition-2,1,BeginTime
+partition-2,1,Resources
+partition-2,1,BeginTime
+partition-2,10,BeginTime
+partition-2,1,BeginTime
+partition-2,1,BeginTime
+partition-2,1,Resources
+partition-2,1,BeginTime
+partition-2,1,BeginTime
+partition-2,10,BeginTime
+partition-2,1,BeginTime
+partition-2,1,Resources
+partition-2,1,BeginTime
+partition-2,50,Priority
+partition-2,50,Priority
+partition-2,50,Priority
+partition-2,50,Priority
+partition-2,50,Resources
+partition-2,50,BeginTime
+partition-2,50,Resources
+partition-2,50,launch failed requeued held
