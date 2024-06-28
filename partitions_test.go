@@ -26,6 +26,10 @@ func TestParsePartitionsMetrics(t *testing.T) {
 	assert.Equal(t, 672., metrics["partition-1"].idle)
 	assert.Equal(t, 2688., metrics["partition-1"].other)
 	assert.Equal(t, 3360., metrics["partition-1"].total)
-	assert.Equal(t, 0., metrics["partition-1"].resources)
-	assert.Equal(t, 103., metrics["partition-2"].resources)
+	assert.Equal(t, 0., metrics["partition-1"].resources["null"])
+	assert.Equal(t, 103., metrics["partition-2"].resources["null"])
+	assert.Equal(t, 30., metrics["partition-2"].resources["cpu"])
+	assert.Equal(t, 30., metrics["partition-2"].resources["efa"])
+	assert.Equal(t, 32., metrics["partition-2"].resources["bananas"])
+	assert.Equal(t, 2., metrics["partition-1"].resources["apples"])
 }

@@ -12,6 +12,7 @@ $(GOBIN): go/modules/pkg/mod $(GOFILES)
 	mkdir -p bin
 	@echo "Building $(GOBIN)"
 	go build -v -o $(GOBIN)
+	GOOS=linux GOARCH=amd64 go build -v -o $(GOBIN)-linux-amd64
 
 go/modules/pkg/mod: go.mod
 	go mod download
